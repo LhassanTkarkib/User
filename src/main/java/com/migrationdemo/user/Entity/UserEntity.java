@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,6 +32,8 @@ public class UserEntity {
     private String password;
     @Column(name = "created_date")
     private LocalDate createdDate;
+    @Column(name = "account_number")
+    private String accountNumber;
 
     @PrePersist
     public void prePersist() {
