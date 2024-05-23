@@ -37,6 +37,16 @@ public class UserController {
         return new ResponseEntity<>(userService.updateUser(userDTO), HttpStatus.OK);
     }
 
+    @PutMapping("/increaseNumberOfAccounts/{userId}")
+    public ResponseEntity<UserEntityDto> increaseNumberOfAccounts(@PathVariable Long userId){
+        return new ResponseEntity<>(userService.IncreaseNumberOfAccounts(userId), HttpStatus.OK);
+    }
+
+    @PutMapping("/decreaseNumberOfAccounts/{userId}")
+    public ResponseEntity<UserEntityDto> decreaseNumberOfAccounts(@PathVariable Long userId){
+        return new ResponseEntity<>(userService.DecreaseNumberOfAccounts(userId), HttpStatus.OK);
+    }
+
     @PostMapping("/createUser")
     public ResponseEntity<UserEntityDto> createUser(@RequestBody UserEntityDto userDTO){
         return new ResponseEntity<>(userService.createUser(userDTO), HttpStatus.CREATED);
