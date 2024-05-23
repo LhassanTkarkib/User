@@ -9,6 +9,10 @@ public interface IUserService {
 
     UserEntityDto updateUser(UserEntityDto userDTO);
 
+    UserEntityDto IncreaseNumberOfAccounts(Long id);
+
+    UserEntityDto DecreaseNumberOfAccounts(Long id);
+
     UserEntityDto getUserById(Long id);
 
     void deleteUser(Long id);

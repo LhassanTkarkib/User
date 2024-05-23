@@ -38,6 +38,39 @@ public class UserServiceIMPL implements IUserService {
         return null;
     }
 
+//    @Override
+//    public UserEntityDto UpdateNumberOfAccounts(Long id, int numberOfAccounts) {
+//        UserEntity userEntity = userRepository.findById(id).orElse(null);
+//        if (userEntity != null) {
+//            userEntity.setAccountsNumber(numberOfAccounts);
+//            userEntity = userRepository.save(userEntity);
+//            return userMapper.toDto(userEntity);
+//        }
+//        return null;
+//    }
+
+    @Override
+    public UserEntityDto IncreaseNumberOfAccounts(Long id) {
+        UserEntity userEntity = userRepository.findById(id).orElse(null);
+        if (userEntity != null) {
+            userEntity.setAccountsNumber(userEntity.getAccountsNumber() + 1);
+            userEntity = userRepository.save(userEntity);
+            return userMapper.toDto(userEntity);
+        }
+        return null;
+    }
+
+    @Override
+    public UserEntityDto DecreaseNumberOfAccounts(Long id) {
+        UserEntity userEntity = userRepository.findById(id).orElse(null);
+        if (userEntity != null) {
+            userEntity.setAccountsNumber(userEntity.getAccountsNumber() - 1);
+            userEntity = userRepository.save(userEntity);
+            return userMapper.toDto(userEntity);
+        }
+        return null;
+    }
+
     @Override
     public UserEntityDto getUserById(Long id) {
         UserEntity userEntity = userRepository.findById(id).orElse(null);

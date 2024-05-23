@@ -32,8 +32,8 @@ public class UserEntity {
     private String password;
     @Column(name = "created_date")
     private LocalDate createdDate;
-    @Column(name = "account_number")
-    private String accountNumber;
+    @Column(name = "accounts_number")
+    private int accountsNumber;
 
     @PrePersist
     public void prePersist() {
