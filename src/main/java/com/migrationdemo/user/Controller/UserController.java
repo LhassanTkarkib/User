@@ -21,6 +21,11 @@ public class UserController {
         return new ResponseEntity<>(userService.getUserById(userId), HttpStatus.OK);
     }
 
+    @GetMapping("/getUserByUsername/{username}")
+    public ResponseEntity<UserEntityDto> getUserByUsername(@PathVariable String username){
+        return new ResponseEntity<>(userService.getUserByUsername(username), HttpStatus.OK);
+    }
+
     @GetMapping("/getUsers")
     public ResponseEntity<List<UserEntityDto>> getUsers(){
         return new ResponseEntity<>(userService.getAllUsers(), HttpStatus.OK);

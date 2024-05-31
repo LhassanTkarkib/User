@@ -39,6 +39,15 @@ public class UserServiceIMPL implements IUserService {
     }
 
     @Override
+    public UserEntityDto getUserByUsername(String username) {
+        UserEntity userEntity = userRepository.findByUsername(username);
+        if (userEntity != null) {
+            return userMapper.toDto(userEntity);
+        }
+        return null;
+    }
+
+    @Override
     public UserEntityDto IncreaseNumberOfAccounts(Long id) {
         UserEntity userEntity = userRepository.findById(id).orElse(null);
         if (userEntity != null) {

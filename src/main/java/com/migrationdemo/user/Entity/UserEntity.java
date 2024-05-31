@@ -24,8 +24,8 @@ public class UserEntity {
             strategy = GenerationType.SEQUENCE,
             generator = "User_sequence")
     private Long id;
-    @Column(name = "name")
-    private String name;
+    @Column(name = "username")
+    private String username;
     @Column(name = "email")
     private String email;
     @Column(name = "password")

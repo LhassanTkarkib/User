@@ -9,6 +9,8 @@ public interface IUserService {
 
     UserEntityDto updateUser(UserEntityDto userDTO);
 
+    UserEntityDto getUserByUsername(String username);
+
     UserEntityDto IncreaseNumberOfAccounts(Long id);
 
     UserEntityDto DecreaseNumberOfAccounts(Long id);

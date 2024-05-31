@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Value
 public class UserEntityDto implements Serializable {
     Long id;
-    String name;
+    String username;
     String email;
     String password;
     LocalDate createdDate;
